@@ -1,7 +1,7 @@
 package com.telusko.quiz_service.controller;
 
+import com.telusko.quiz_service.dto.QuestionWrapper;
 import com.telusko.quiz_service.dto.QuizDto;
-import com.telusko.quiz_service.dto.QuizResponse;
 import com.telusko.quiz_service.dto.QuizResultResponse;
 import com.telusko.quiz_service.model.QuizAnswer;
 import com.telusko.quiz_service.service.QuizService;
@@ -24,7 +24,7 @@ public class QuizController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<List<QuizResponse>> getQuizQuestions(@PathVariable("id") Integer id) {
+    public ResponseEntity<List<QuestionWrapper>> getQuizQuestions(@PathVariable("id") Integer id) {
         return quizService.getQuizQuestions(id);
     }
 
